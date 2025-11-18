@@ -24,10 +24,6 @@ export default function CampaignGrid() {
 
   const fetchCampaigns = async () => {
     try {
-      if (!supabase) {
-        throw new Error('Supabase not configured');
-      }
-      
       const { data, error } = await supabase
         .from('campaigns')
         .select('*')
@@ -38,6 +34,7 @@ export default function CampaignGrid() {
       if (error) throw error;
       setCampaigns(data || []);
     } catch (error) {
+      console.error('Error fetching campaigns:', error);
       // Fallback to static data if Supabase fails
       setCampaigns([
         { id: '1', name: 'FarmAI', pitch: 'AI-powered crop optimization for African farmers', progress: 75, sector: 'AgriTech', funding_goal: 60000, amount_raised: 45000 },

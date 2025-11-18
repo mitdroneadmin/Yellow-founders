@@ -20,10 +20,6 @@ export default function WaitlistSection() {
     };
 
     try {
-      if (!supabase) {
-        throw new Error('Supabase not configured');
-      }
-      
       const { error } = await supabase
         .from('waitlist')
         .insert([data]);
@@ -33,6 +29,7 @@ export default function WaitlistSection() {
       setMessage('Successfully joined the waitlist!');
       (e.target as HTMLFormElement).reset();
     } catch (error: any) {
+      console.error('Error submitting to waitlist:', error);
       setMessage(error.message || 'Something went wrong. Please try again.');
     } finally {
       setIsSubmitting(false);

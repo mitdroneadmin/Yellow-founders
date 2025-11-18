@@ -49,10 +49,6 @@ export default function CreateCampaignFlow() {
     };
 
     try {
-      if (!supabase) {
-        throw new Error('Supabase not configured');
-      }
-      
       const { error } = await supabase
         .from('startup_submissions')
         .insert([data]);
@@ -64,6 +60,7 @@ export default function CreateCampaignFlow() {
         window.location.href = '/thank-you';
       }, 2000);
     } catch (error: any) {
+      console.error('Error submitting startup:', error);
       setMessage(error.message || 'Something went wrong. Please try again.');
     } finally {
       setIsSubmitting(false);
