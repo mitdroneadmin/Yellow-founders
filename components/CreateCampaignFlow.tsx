@@ -64,7 +64,6 @@ export default function CreateCampaignFlow() {
         window.location.href = '/thank-you';
       }, 2000);
     } catch (error: any) {
-      console.error('Error submitting startup:', error);
       setMessage(error.message || 'Something went wrong. Please try again.');
     } finally {
       setIsSubmitting(false);

@@ -42,7 +42,6 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
         setMessage('');
       }, 2000);
     } catch (error: any) {
-      console.error('Error submitting to waitlist:', error);
       setMessage(error.message || 'Something went wrong. Please try again.');
     } finally {
       setIsSubmitting(false);
