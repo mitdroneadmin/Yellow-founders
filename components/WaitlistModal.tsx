@@ -1,6 +1,8 @@
 'use client';
 
+import { useState } from 'react';
 import { X } from 'lucide-react';
+import { supabase } from '@/lib/supabase';
 
 interface WaitlistModalProps {
   isOpen: boolean;
@@ -8,6 +10,41 @@ interface WaitlistModalProps {
 }
 
 export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setMessage('');
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get('name') as string,
+      email: formData.get('email') as string,
+      interest: formData.get('interest') as string,
+    };
+
+    try {
+      const { error } = await supabase
+        .from('waitlist')
+        .insert([data]);
+
+      if (error) throw error;
+
+      setMessage('Successfully joined the waitlist!');
+      setTimeout(() => {
+        onClose();
+        setMessage('');
+      }, 2000);
+    } catch (error: any) {
+      console.error('Error submitting to waitlist:', error);
+      setMessage(error.message || 'Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   if (!isOpen) return null;
 
   return (
@@ -23,7 +60,13 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
         <h2 className="text-2xl font-bold text-gray-900 mb-2">Join the Movement</h2>
         <p className="text-gray-600 mb-6">Be among the first to invest in Africa's brightest founders.</p>
 
-        <form name="yfounders-waitlist" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="tell-me-more" className="space-y-4">
+        {message && (
+          <div className={`p-3 rounded-lg mb-4 ${message.includes('Successfully') ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
+            {message}
+          </div>
+        )}
+
+        <form onSubmit={handleSubmit} name="yfounders-waitlist" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="tell-me-more" className="space-y-4">
           <input type="hidden" name="form-name" value="yfounders-waitlist" />
           <input type="text" name="tell-me-more" className="hidden" tabIndex={-1} autoComplete="off" />
           
@@ -59,9 +102,10 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
           
           <button 
             type="submit" 
-            className="w-full rounded-2xl bg-primary px-4 py-3 font-semibold text-black hover:bg-primary-500 transition-colors"
+            disabled={isSubmitting}
+            className="w-full rounded-2xl bg-primary px-4 py-3 font-semibold text-black hover:bg-primary-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Join Waitlist
+            {isSubmitting ? 'Joining...' : 'Join Waitlist'}
           </button>
         </form>
       </div>

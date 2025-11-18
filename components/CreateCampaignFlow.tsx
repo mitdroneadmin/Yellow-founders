@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { ChevronRight, ChevronLeft } from 'lucide-react';
+import { supabase } from '@/lib/supabase';
 
 export default function CreateCampaignFlow() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -12,6 +13,8 @@ export default function CreateCampaignFlow() {
     fundingGoal: '',
     pitch: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [message, setMessage] = useState('');
 
   const totalSteps = 4;
 
@@ -29,6 +32,39 @@ export default function CreateCampaignFlow() {
 
   const updateFormData = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setMessage('');
+
+    const formDataObj = new FormData(e.currentTarget);
+    const data = {
+      founder_name: formDataObj.get('founderName') as string,
+      founder_email: formDataObj.get('founderEmail') as string,
+      startup_name: formDataObj.get('startupName') as string,
+      funding_goal: parseInt(formDataObj.get('fundingGoal') as string) || 0,
+      pitch: formDataObj.get('pitch') as string,
+    };
+
+    try {
+      const { error } = await supabase
+        .from('startup_submissions')
+        .insert([data]);
+
+      if (error) throw error;
+
+      setMessage('Successfully submitted your startup!');
+      setTimeout(() => {
+        window.location.href = '/thank-you';
+      }, 2000);
+    } catch (error: any) {
+      console.error('Error submitting startup:', error);
+      setMessage(error.message || 'Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -152,7 +188,13 @@ export default function CreateCampaignFlow() {
           </div>
 
           {/* Submission Form */}
-          <form name="yfounders-startup-submission" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="tell-me-more" className="space-y-4">
+          {message && (
+            <div className={`p-3 rounded-lg mb-4 ${message.includes('Successfully') ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
+              {message}
+            </div>
+          )}
+
+          <form onSubmit={handleSubmit} name="yfounders-startup-submission" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="tell-me-more" className="space-y-4">
             <input type="hidden" name="form-name" value="yfounders-startup-submission" />
             <input type="text" name="tell-me-more" className="hidden" tabIndex={-1} autoComplete="off" />
             <input type="hidden" name="previewCard" value={`${formData.startupName} - ${formData.pitch} - Goal: $${formData.fundingGoal}`} />
@@ -213,9 +255,10 @@ export default function CreateCampaignFlow() {
             
             <button 
               type="submit" 
-              className="w-full rounded-2xl bg-primary px-4 py-3 font-semibold text-black hover:bg-primary-500 transition-colors"
+              disabled={isSubmitting}
+              className="w-full rounded-2xl bg-primary px-4 py-3 font-semibold text-black hover:bg-primary-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Submit Your Startup
+              {isSubmitting ? 'Submitting...' : 'Submit Your Startup'}
             </button>
           </form>
         </div>
