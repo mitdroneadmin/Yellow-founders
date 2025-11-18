@@ -20,6 +20,10 @@ export default function WaitlistSection() {
     };
 
     try {
+      if (!supabase) {
+        throw new Error('Supabase not configured');
+      }
+      
       const { error } = await supabase
         .from('waitlist')
         .insert([data]);

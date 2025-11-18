@@ -23,6 +23,10 @@ export default function DiscoverGrid() {
 
   const fetchCampaigns = async () => {
     try {
+      if (!supabase) {
+        throw new Error('Supabase not configured');
+      }
+      
       const { data, error } = await supabase
         .from('campaigns')
         .select('*')

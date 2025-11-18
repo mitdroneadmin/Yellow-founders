@@ -49,6 +49,10 @@ export default function CreateCampaignFlow() {
     };
 
     try {
+      if (!supabase) {
+        throw new Error('Supabase not configured');
+      }
+      
       const { error } = await supabase
         .from('startup_submissions')
         .insert([data]);
