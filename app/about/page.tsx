@@ -10,7 +10,7 @@ export default function AboutPage() {
         <div className="text-center mb-16">
           <h1 className="text-5xl font-bold text-gray-900 mb-6">About Yellow Founders</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We're building the infrastructure to unlock Africa's innovation economy
+            We&apos;re building the infrastructure to unlock Africa&apos;s innovation economy
           </p>
         </div>
         <VisionSection />
