@@ -21,7 +21,7 @@ export default function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
         </button>
 
         <h2 className="text-2xl font-bold text-gray-900 mb-2">Join the Movement</h2>
-        <p className="text-gray-600 mb-6">Be among the first to invest in Africa's brightest founders.</p>
+        <p className="text-gray-600 mb-6">Be among the first to invest in Africa&apos;s brightest founders.</p>
 
         <form name="yfounders-waitlist" method="POST" action="/thank-you" data-netlify="true" netlify-honeypot="tell-me-more" className="space-y-4">
           <input type="hidden" name="form-name" value="yfounders-waitlist" />

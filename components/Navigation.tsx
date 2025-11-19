@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,9 +14,11 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center space-x-2">
             <div className="w-8 h-8 rounded-full overflow-hidden animate-pulse-glow">
-              <img 
-                src="/Untitled design.png" 
-                alt="Yellow Founders Logo" 
+              <Image
+                src="/Untitled design.png"
+                alt="Yellow Founders Logo"
+                width={32}
+                height={32}
                 className="w-full h-full object-cover"
               />
             </div>

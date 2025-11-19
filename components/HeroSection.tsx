@@ -19,15 +19,10 @@ export default function HeroSection() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
         <div className="text-center mb-16">
-          {/* Beta Badge */}
-          <div className="inline-flex items-center space-x-2 glass border-sleek text-primary px-6 py-3 rounded-full mb-8 animate-fade-in hover-lift">
-            <Rocket className="w-4 h-4" />
-            <span className="font-medium">🚀 Beta Access Now Open</span>
-          </div>
 
           {/* Hero Content */}
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-in">
-            Fuel Africa's Future
+            Fuel Africa&apos;s Future
             <br />
             <span className="gradient-text animate-shimmer">with Bold Ideas</span>
           </h1>

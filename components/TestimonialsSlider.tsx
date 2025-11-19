@@ -29,7 +29,7 @@ export default function TestimonialsSlider() {
       setCurrentSlide((prev) => (prev + 1) % testimonials.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, []);
+  }, [testimonials.length]);
 
   return (
     <section className="py-20 bg-gradient-to-b from-black to-gray-900 text-white relative overflow-hidden">
@@ -55,7 +55,7 @@ export default function TestimonialsSlider() {
                 <div key={index} className="w-full flex-shrink-0 text-center px-8">
                   <Quote className="w-12 h-12 text-primary mx-auto mb-6 animate-pulse-glow" />
                   <blockquote className="text-2xl md:text-3xl font-medium text-white mb-8">
-                    "{testimonial.quote}"
+                    &quot;{testimonial.quote}&quot;
                   </blockquote>
                   <div>
                     <p className="text-lg font-semibold text-primary">{testimonial.author}</p>

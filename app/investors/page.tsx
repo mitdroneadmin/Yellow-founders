@@ -9,7 +9,7 @@ export default function InvestorsPage() {
         <div className="text-center mb-16">
           <h1 className="text-5xl font-bold text-gray-900 mb-6">Why Invest in African Innovation</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Be part of the movement that's transforming Africa's tech landscape. Support visionary founders 
+            Be part of the movement that&apos;s transforming Africa&apos;s tech landscape. Support visionary founders
             building solutions for a continent of over 1.4 billion people.
           </p>
         </div>
