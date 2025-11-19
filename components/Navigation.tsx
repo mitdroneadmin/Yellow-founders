@@ -8,18 +8,18 @@ export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+    <nav className="fixed top-0 w-full glass border-b border-white/20 z-50 shadow-sleek">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 rounded-full overflow-hidden">
+            <div className="w-8 h-8 rounded-full overflow-hidden animate-pulse-glow">
               <img 
                 src="/Untitled design.png" 
                 alt="Yellow Founders Logo" 
                 className="w-full h-full object-cover"
               />
             </div>
-            <span className="font-bold text-xl text-gray-900">Yellow Founders</span>
+            <span className="font-bold text-xl gradient-text">Yellow Founders</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -36,7 +36,7 @@ export default function Navigation() {
             <Link href="/about" className="text-gray-700 hover:text-primary transition-colors">
               About
             </Link>
-            <button className="text-gray-700 hover:text-primary transition-colors">
+            <button className="glass-dark text-white px-4 py-2 rounded-xl hover:bg-primary hover:text-black transition-all duration-300 hover-lift">
               Sign In
             </button>
           </div>

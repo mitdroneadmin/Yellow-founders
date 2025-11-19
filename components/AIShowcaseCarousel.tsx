@@ -93,18 +93,18 @@ export default function AIShowcaseCarousel() {
   };
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-gradient-to-b from-black to-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold text-gray-900 mb-6">Powering Africa's AI Revolution</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-5xl font-bold gradient-text mb-6 animate-shimmer">Powering Africa's AI Revolution</h2>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Discover cutting-edge AI projects transforming African industries
           </p>
         </div>
 
         <div className="relative max-w-6xl mx-auto">
           {/* Main Carousel Container */}
-          <div className="relative h-[500px] md:h-[600px] rounded-3xl overflow-hidden shadow-2xl">
+          <div className="relative h-[500px] md:h-[600px] rounded-3xl overflow-hidden shadow-sleek-lg border border-primary/20 animate-glow">
             {projects.map((project, index) => (
               <div
                 key={project.id}
@@ -125,7 +125,7 @@ export default function AIShowcaseCarousel() {
                 {/* Content */}
                 <div className="relative h-full flex items-center justify-center text-center text-white p-8">
                   <div className="max-w-2xl">
-                    <div className="inline-block bg-primary text-black px-4 py-2 rounded-full text-sm font-semibold mb-6 animate-fade-in">
+                    <div className="inline-block glass border-sleek text-primary px-6 py-3 rounded-full text-sm font-semibold mb-6 animate-fade-in hover-lift">
                       {project.category}
                     </div>
                     <h3 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
@@ -143,14 +143,14 @@ export default function AIShowcaseCarousel() {
           {/* Navigation Arrows */}
           <button
             onClick={prevSlide}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white p-3 rounded-full transition-all duration-300 hover:scale-110"
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 glass hover:bg-primary/20 text-white p-3 rounded-full transition-all duration-300 hover-lift border-sleek"
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
           
           <button
             onClick={nextSlide}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white p-3 rounded-full transition-all duration-300 hover:scale-110"
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 glass hover:bg-primary/20 text-white p-3 rounded-full transition-all duration-300 hover-lift border-sleek"
           >
             <ChevronRight className="w-6 h-6" />
           </button>
@@ -158,7 +158,7 @@ export default function AIShowcaseCarousel() {
           {/* Play/Pause Button */}
           <button
             onClick={togglePlayPause}
-            className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white p-3 rounded-full transition-all duration-300 hover:scale-110"
+            className="absolute top-4 right-4 glass hover:bg-primary/20 text-white p-3 rounded-full transition-all duration-300 hover-lift border-sleek"
           >
             {isPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5" />}
           </button>
@@ -171,8 +171,8 @@ export default function AIShowcaseCarousel() {
                 onClick={() => goToSlide(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
                   index === currentSlide 
-                    ? 'bg-primary scale-125' 
-                    : 'bg-gray-300 hover:bg-gray-400'
+                    ? 'bg-primary scale-125 animate-glow' 
+                    : 'bg-gray-600 hover:bg-gray-400'
                 }`}
               />
             ))}
@@ -180,13 +180,13 @@ export default function AIShowcaseCarousel() {
 
           {/* Progress Bar */}
           <div className="mt-6 max-w-md mx-auto">
-            <div className="w-full bg-gray-200 rounded-full h-1">
+            <div className="w-full bg-gray-700 rounded-full h-1">
               <div 
-                className="bg-primary h-1 rounded-full transition-all duration-300"
+                className="bg-gradient-to-r from-primary to-primary-400 h-1 rounded-full transition-all duration-300 animate-shimmer"
                 style={{ width: `${((currentSlide + 1) / projects.length) * 100}%` }}
               ></div>
             </div>
-            <div className="flex justify-between text-sm text-gray-500 mt-2">
+            <div className="flex justify-between text-sm text-gray-400 mt-2">
               <span>{currentSlide + 1} of {projects.length}</span>
               <span>{projects[currentSlide].category}</span>
             </div>
@@ -199,8 +199,8 @@ export default function AIShowcaseCarousel() {
             <button
               key={project.id}
               onClick={() => goToSlide(index)}
-              className={`relative h-20 rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 ${
-                index === currentSlide ? 'ring-4 ring-primary' : ''
+              className={`relative h-20 rounded-xl overflow-hidden transition-all duration-300 hover-lift border-sleek ${
+                index === currentSlide ? 'ring-2 ring-primary animate-glow' : ''
               }`}
             >
               <div 
