@@ -15,7 +15,7 @@ export default function FounderBio() {
             <h3 className="text-3xl font-bold text-gray-900 mb-2">Michael Ishoko</h3>
             <p className="text-xl text-primary font-medium mb-4">Founder & CEO</p>
             <p className="text-gray-600 leading-relaxed mb-6">
-              Visionary entrepreneur building Africa's future. With over a decade of experience in fintech 
+              Visionary entrepreneur building Africa&apos;s future. With over a decade of experience in fintech
               and venture capital, Michael is passionate about democratizing access to investment opportunities 
               for African innovators.
             </p>

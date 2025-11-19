@@ -1,5 +1,6 @@
 import { Mail, Phone, Twitter, Linkedin, Instagram } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -16,9 +17,11 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-2">
             <Link href="/" className="flex items-center space-x-2 mb-4">
               <div className="w-8 h-8 rounded-full overflow-hidden animate-pulse-glow">
-                <img 
-                  src="/Untitled design.png" 
-                  alt="Yellow Founders Logo" 
+                <Image
+                  src="/Untitled design.png"
+                  alt="Yellow Founders Logo"
+                  width={32}
+                  height={32}
                   className="w-full h-full object-cover"
                 />
               </div>

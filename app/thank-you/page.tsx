@@ -9,7 +9,7 @@ export default function ThankYouPage() {
           <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-6" />
           <h1 className="text-3xl font-bold text-gray-900 mb-4">Thank You!</h1>
           <p className="text-gray-600 mb-8">
-            We've received your submission. Our team will review it and get back to you within 48 hours.
+            We&apos;ve received your submission. Our team will review it and get back to you within 48 hours.
           </p>
           <Link 
             href="/"

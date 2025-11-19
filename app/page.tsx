@@ -1,9 +1,11 @@
+import dynamic from 'next/dynamic';
 import HeroSection from '@/components/HeroSection';
-import AIShowcaseCarousel from '@/components/AIShowcaseCarousel';
 import CampaignGrid from '@/components/CampaignGrid';
 import TrustSignals from '@/components/TrustSignals';
-import TestimonialsSlider from '@/components/TestimonialsSlider';
 import WaitlistSection from '@/components/WaitlistSection';
+
+const AIShowcaseCarousel = dynamic(() => import('@/components/AIShowcaseCarousel'));
+const TestimonialsSlider = dynamic(() => import('@/components/TestimonialsSlider'));
 
 export default function Home() {
   return (
