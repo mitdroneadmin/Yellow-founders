@@ -1,4 +1,5 @@
 import HeroSection from '@/components/HeroSection';
+import AIShowcaseCarousel from '@/components/AIShowcaseCarousel';
 import CampaignGrid from '@/components/CampaignGrid';
 import TrustSignals from '@/components/TrustSignals';
 import TestimonialsSlider from '@/components/TestimonialsSlider';
@@ -23,6 +24,7 @@ export default function Home() {
       </form>
 
       <HeroSection />
+      <AIShowcaseCarousel />
       <CampaignGrid />
       <TrustSignals />
       <TestimonialsSlider />

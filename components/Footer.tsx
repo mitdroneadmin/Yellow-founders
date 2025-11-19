@@ -9,8 +9,12 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
             <Link href="/" className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-black font-bold text-lg">Y</span>
+              <div className="w-8 h-8 rounded-full overflow-hidden">
+                <img 
+                  src="/Untitled design.png" 
+                  alt="Yellow Founders Logo" 
+                  className="w-full h-full object-cover"
+                />
               </div>
               <span className="font-bold text-xl">Yellow Founders</span>
             </Link>
