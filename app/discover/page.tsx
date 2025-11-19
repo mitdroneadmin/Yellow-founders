@@ -1,6 +1,8 @@
+import dynamic from 'next/dynamic';
 import DiscoverHeader from '@/components/DiscoverHeader';
 import CampaignFilters from '@/components/CampaignFilters';
-import DiscoverGrid from '@/components/DiscoverGrid';
+
+const DiscoverGrid = dynamic(() => import('@/components/DiscoverGrid'));
 
 export default function DiscoverPage() {
   return (
