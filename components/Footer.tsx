@@ -82,5 +82,9 @@ export default function Footer() {
                 Privacy Policy
               </Link>
             </div>
-  )
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
 }
