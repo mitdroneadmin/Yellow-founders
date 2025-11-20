@@ -21,9 +21,7 @@ export default function HeroSection() {
         <div className="text-center mb-16">
           {/* Hero Content */}
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-in">
-            Fuel Africa's Future
-            <br />
-            <span className="gradient-text animate-shimmer">with Bold Ideas</span>
+            <span className="gradient-text animate-shimmer">Empowering African Innovation</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto animate-fade-in">
