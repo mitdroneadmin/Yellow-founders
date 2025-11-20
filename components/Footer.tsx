@@ -55,6 +55,22 @@ export default function Footer() {
             </div>
           </div>
 
+          {/* About */}
+          <div>
+            <h3 className="font-semibold text-lg mb-4">About</h3>
+            <div className="space-y-2">
+              <Link href="/about" className="block text-gray-400 hover:text-white transition-colors">
+                Our Story
+              </Link>
+              <Link href="/about" className="block text-gray-400 hover:text-white transition-colors">
+                Mission & Vision
+              </Link>
+              <Link href="/about" className="block text-gray-400 hover:text-white transition-colors">
+                Team
+              </Link>
+            </div>
+          </div>
+
           {/* Legal */}
           <div>
             <h3 className="font-semibold text-lg mb-4">Legal</h3>

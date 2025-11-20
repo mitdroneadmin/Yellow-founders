@@ -24,17 +24,17 @@ export default function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="/discover" className="text-gray-700 hover:text-primary transition-colors">
+            <Link href="/discover" className="bg-primary text-black px-4 py-2 rounded-xl hover:bg-primary-500 transition-colors font-medium">
               Discover
             </Link>
-            <Link href="/create" className="text-gray-700 hover:text-primary transition-colors">
+            <Link href="/create" className="bg-primary text-black px-4 py-2 rounded-xl hover:bg-primary-500 transition-colors font-medium">
               Create
             </Link>
-            <Link href="/investors" className="text-gray-700 hover:text-primary transition-colors">
+            <Link href="/investors" className="bg-primary text-black px-4 py-2 rounded-xl hover:bg-primary-500 transition-colors font-medium">
               Investors
             </Link>
-            <Link href="/about" className="text-gray-700 hover:text-primary transition-colors">
-              About
+            <Link href="/yf-academy" className="bg-primary text-black px-4 py-2 rounded-xl hover:bg-primary-500 transition-colors font-medium">
+              Y-F Academy
             </Link>
             <button className="glass-dark text-white px-4 py-2 rounded-xl hover:bg-primary hover:text-black transition-all duration-300 hover-lift">
               Sign In
@@ -54,17 +54,17 @@ export default function Navigation() {
         {isOpen && (
           <div className="md:hidden py-4 border-t border-gray-200">
             <div className="flex flex-col space-y-4">
-              <Link href="/discover" className="text-gray-700 hover:text-primary transition-colors">
+              <Link href="/discover" className="bg-primary text-black px-4 py-2 rounded-xl hover:bg-primary-500 transition-colors font-medium">
                 Discover
               </Link>
-              <Link href="/create" className="text-gray-700 hover:text-primary transition-colors">
+              <Link href="/create" className="bg-primary text-black px-4 py-2 rounded-xl hover:bg-primary-500 transition-colors font-medium">
                 Create
               </Link>
-              <Link href="/investors" className="text-gray-700 hover:text-primary transition-colors">
+              <Link href="/investors" className="bg-primary text-black px-4 py-2 rounded-xl hover:bg-primary-500 transition-colors font-medium">
                 Investors
               </Link>
-              <Link href="/about" className="text-gray-700 hover:text-primary transition-colors">
-                About
+              <Link href="/yf-academy" className="bg-primary text-black px-4 py-2 rounded-xl hover:bg-primary-500 transition-colors font-medium">
+                Y-F Academy
               </Link>
               <button className="text-gray-700 hover:text-primary transition-colors text-left">
                 Sign In
