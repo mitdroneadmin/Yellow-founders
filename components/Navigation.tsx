@@ -52,8 +52,8 @@ export default function Navigation() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden py-4 border-t border-gray-200">
-            <div className="flex flex-col space-y-4">
+          <div className="md:hidden py-4">
+            <div className="flex flex-col space-y-3 max-w-xs">
               <Link href="/discover" className="bg-primary text-black px-4 py-2 rounded-xl hover:bg-primary-500 transition-colors font-medium">
                 Discover
               </Link>
@@ -66,7 +66,7 @@ export default function Navigation() {
               <Link href="/yf-academy" className="bg-primary text-black px-4 py-2 rounded-xl hover:bg-primary-500 transition-colors font-medium">
                 Y-F Academy
               </Link>
-              <button className="text-gray-700 hover:text-primary transition-colors text-left">
+              <button className="text-gray-400 hover:text-primary transition-colors text-left">
                 Sign In
               </button>
             </div>
