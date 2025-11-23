@@ -1,13 +1,9 @@
 'use client';
 
-import { useState } from 'react';
 import { Rocket, Play } from 'lucide-react';
-import WaitlistModal from './WaitlistModal';
 import Link from 'next/link';
 
 export default function HeroSection() {
-  const [showWaitlist, setShowWaitlist] = useState(false);
-
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black pt-16 overflow-hidden">
       {/* Background Pattern */}
@@ -30,12 +26,12 @@ export default function HeroSection() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-in">
-            <button
-              onClick={() => setShowWaitlist(true)}
+            <Link
+              href="/discover"
               className="bg-primary hover:bg-primary-500 text-black px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 hover-lift animate-glow shadow-sleek"
             >
-              Join Waitlist
-            </button>
+              Explore Startups
+            </Link>
             <Link
               href="/create"
               className="glass-dark text-white px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 hover-lift shadow-sleek hover:bg-primary hover:text-black"
@@ -74,8 +70,6 @@ export default function HeroSection() {
           ))}
         </div>
       </div>
-
-      <WaitlistModal isOpen={showWaitlist} onClose={() => setShowWaitlist(false)} />
     </section>
   );
 }
