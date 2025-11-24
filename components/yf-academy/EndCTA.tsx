@@ -27,7 +27,7 @@ const EndCTA = () => {
         </motion.p>
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
-          whileInVeiw={{ opacity: 1, scale: 1 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mt-12"

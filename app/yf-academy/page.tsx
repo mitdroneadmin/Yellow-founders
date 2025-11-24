@@ -11,7 +11,7 @@ import EndCTA from '@/components/yf-academy/EndCTA';
 
 export default function YFAcademyPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-black">
       <Hero />
       <StarterPack />
       <CampaignPage />
