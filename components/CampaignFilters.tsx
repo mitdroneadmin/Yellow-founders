@@ -13,10 +13,10 @@ export default function CampaignFilters() {
         <button
           key={filter}
           onClick={() => setActiveFilter(filter)}
-          className={`px-6 py-3 rounded-2xl font-medium transition-all duration-300 ${
+          className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
             activeFilter === filter
-              ? 'bg-primary text-black shadow-lg'
-              : 'bg-white text-gray-700 border border-gray-200 hover:border-primary hover:text-primary'
+              ? 'bg-primary text-primary-foreground shadow-md'
+              : 'bg-card text-secondary border border-grey-medium hover:border-primary hover:text-primary'
           }`}
         >
           {filter}
