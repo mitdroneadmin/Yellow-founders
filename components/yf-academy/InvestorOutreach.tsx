@@ -71,22 +71,24 @@ const InvestorOutreach = () => {
   };
 
   return (
-    <section className="py-20 md:py-28 bg-gray-900 text-white overflow-hidden">
+    <section className="py-20 md:py-28 bg-grey-light text-secondary overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 md:mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-amber-500"
+            className="text-3xl md:text-5xl font-extrabold text-secondary"
           >
             How to Communicate With Investors (African Market Focus)
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-4 text-lg md:text-xl text-gray-400 max-w-3xl mx-auto"
+            className="mt-4 text-lg md:text-xl text-body-text max-w-3xl mx-auto"
           >
             Actionable strategies for African startup fundraising.
           </motion.p>
@@ -104,14 +106,14 @@ const InvestorOutreach = () => {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="flex items-start p-6 bg-gray-800 rounded-lg border border-gray-700"
+                className="flex items-start p-6 bg-card rounded-lg border border-card-border"
               >
-                <div className="flex-shrink-0 mr-5 text-amber-500">
+                <div className="flex-shrink-0 mr-5 text-primary">
                   {React.cloneElement(strategy.icon, { className: "h-6 w-6 md:h-8 md:w-8" })}
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold">{strategy.title}</h3>
-                  <p className="text-gray-400 mt-1">{strategy.description}</p>
+                  <h3 className="text-xl font-bold text-secondary">{strategy.title}</h3>
+                  <p className="text-body-text mt-1">{strategy.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -122,21 +124,21 @@ const InvestorOutreach = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="bg-gray-800 p-8 rounded-xl shadow-2xl border border-amber-500/50"
+            className="bg-card p-8 rounded-lg shadow-soft border border-primary/50"
           >
-            <h3 className="text-2xl font-bold text-center mb-6 text-yellow-400">
+            <h3 className="text-2xl font-bold text-center mb-6 text-primary">
               Included Templates
             </h3>
             <div className="space-y-4">
               {templateItems.map((template, index) => (
                 <div
                   key={index}
-                  className="flex items-center p-4 bg-gray-700 rounded-md"
+                  className="flex items-center p-4 bg-grey-light rounded-md"
                 >
-                  <div className="mr-4 text-amber-500">
+                  <div className="mr-4 text-primary">
                     {React.cloneElement(template.icon, { className: "h-6 w-6" })}
                   </div>
-                  <span className="text-lg font-medium">{template.name}</span>
+                  <span className="text-lg font-medium text-secondary">{template.name}</span>
                 </div>
               ))}
             </div>
