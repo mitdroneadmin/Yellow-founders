@@ -1,5 +1,4 @@
-import Link from 'next/link';
-
+import Link from "next/link";
 export default function CampaignGrid() {
   const campaigns = [
     { name: 'FarmAI', pitch: 'AI-powered crop optimization for African farmers', progress: 75, sector: 'AgriTech', raised: '$45K', goal: '$60K' },
@@ -11,37 +10,39 @@ export default function CampaignGrid() {
   ];
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-secondary mb-4">Featured Campaigns</h2>
-          <p className="text-xl text-body-text">Support the next generation of African innovation</p>
+          <h2 className="text-4xl font-bold gradient-text mb-4 animate-shimmer">Featured Campaigns</h2>
+          <p className="text-xl text-gray-300">Support the next generation of African innovation</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {campaigns.map((campaign, index) => (
-            <div
-              key={index}
-              className="bg-card border border-card-border rounded-lg shadow-soft p-6 transition-transform duration-300 transform hover:scale-105 animate-fade-up"
+            <div 
+              key={index} 
+              className="glass border-sleek rounded-2xl shadow-sleek p-6 hover-lift group"
             >
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-grey-light rounded-xl flex items-center justify-center mr-4">
-                  <span className="text-secondary font-bold text-lg">{campaign.name[0]}</span>
+              <div className="flex items-center space-x-3 mb-4">
+                <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center animate-pulse-glow">
+                  <span className="text-black font-bold text-lg">{campaign.name[0]}</span>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-card-foreground">{campaign.name}</h3>
-                   <span className="text-accent-foreground bg-accent px-2 py-1 rounded-full text-sm font-semibold">{campaign.sector}</span>
+                  <h3 className="text-xl font-bold text-white">{campaign.name}</h3>
+                  <span className="text-sm text-primary font-medium">{campaign.sector}</span>
                 </div>
               </div>
-              <p className="text-body-text mb-6 h-16">{campaign.pitch}</p>
+              
+              <p className="text-gray-300 mb-6">{campaign.pitch}</p>
+              
               <div className="space-y-3">
                 <div className="flex justify-between text-sm">
-                  <span className="text-small-label">{campaign.raised} raised</span>
-                  <span className="text-secondary font-medium">{campaign.progress}% of {campaign.goal}</span>
+                  <span className="text-gray-400">{campaign.raised} raised</span>
+                  <span className="text-white font-medium">{campaign.progress}% of {campaign.goal}</span>
                 </div>
-                <div className="w-full bg-grey-medium rounded-full h-2">
-                  <div
-                    className="bg-primary h-2 rounded-full"
+                <div className="w-full bg-gray-700 rounded-full h-2">
+                  <div 
+                    className="bg-gradient-to-r from-primary to-primary-400 h-2 rounded-full transition-all duration-500 animate-shimmer"
                     style={{ width: `${campaign.progress}%` }}
                   ></div>
                 </div>
@@ -51,9 +52,9 @@ export default function CampaignGrid() {
         </div>
 
         <div className="text-center mt-12">
-          <Link
+          <Link 
             href="/discover"
-            className="bg-primary hover:bg-primary-hover text-primary-foreground px-8 py-4 rounded-lg font-semibold text-lg transition-transform duration-300 transform hover:-translate-y-1"
+            className="inline-block glass-dark text-white px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 hover-lift shadow-sleek hover:bg-primary hover:text-black border-sleek"
           >
             View All Campaigns
           </Link>

@@ -23,12 +23,12 @@ export default function InvestorFeatures() {
     <section className="py-16">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {features.map((feature, index) => (
-          <div key={index} className="bg-card border border-card-border rounded-lg shadow-soft p-8 text-center transition-transform duration-300 transform hover:scale-105">
-            <div className="w-16 h-16 bg-primary rounded-xl flex items-center justify-center mx-auto mb-6">
-              <feature.icon className="w-8 h-8 text-primary-foreground" />
+          <div key={index} className="bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition-all duration-300">
+            <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <feature.icon className="w-8 h-8 text-black" />
             </div>
-            <h3 className="text-2xl font-bold text-secondary mb-4">{feature.title}</h3>
-            <p className="text-body-text leading-relaxed">{feature.description}</p>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">{feature.title}</h3>
+            <p className="text-gray-600 leading-relaxed">{feature.description}</p>
           </div>
         ))}
       </div>

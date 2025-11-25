@@ -10,39 +10,65 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: '#FFFFFF',
-        foreground: '#1F2D3A',
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
         primary: {
-          DEFAULT: '#35556E',
-          foreground: '#FFFFFF',
-          hover: '#2F4D63',
+          DEFAULT: '#FFD700',
+          50: '#FFFEF7',
+          100: '#FFFDE0',
+          200: '#FFFBB3',
+          300: '#FFF980',
+          400: '#FFD700',
+          500: '#E6C200',
+          600: '#CCAD00',
+          700: '#B39900',
+          800: '#998400',
+          900: '#806F00',
+          foreground: '#000000',
         },
         secondary: {
-          DEFAULT: '#1F2D3A',
+          DEFAULT: '#6B7280',
+          50: '#F9FAFB',
+          100: '#F3F4F6',
+          200: '#E5E7EB',
+          300: '#D1D5DB',
+          400: '#9CA3AF',
+          500: '#6B7280',
+          600: '#4B5563',
+          700: '#374151',
+          800: '#1F2937',
+          900: '#111827',
           foreground: '#FFFFFF',
         },
-        accent: {
-          DEFAULT: '#FFD978',
-          foreground: '#1F2D3A',
-        },
-        grey: {
-          light: '#F5F6F7',
-          medium: '#E5E7EB',
-          deep: '#D1D5DB',
-        },
-        'body-text': '#4B5563',
-        'small-label': '#6B7280',
-        border: '#E5E7EB',
-        input: '#D1D5DB',
-        ring: '#35556E',
         card: {
-          DEFAULT: '#FFFFFF',
-          foreground: '#1F2D3A',
-          border: '#E5E7EB',
+          DEFAULT: 'hsl(var(--card))',
+          foreground: 'hsl(var(--card-foreground))',
+        },
+        popover: {
+          DEFAULT: 'hsl(var(--popover))',
+          foreground: 'hsl(var(--popover-foreground))',
+        },
+        muted: {
+          DEFAULT: 'hsl(var(--muted))',
+          foreground: 'hsl(var(--muted-foreground))',
+        },
+        accent: {
+          DEFAULT: 'hsl(var(--accent))',
+          foreground: 'hsl(var(--accent-foreground))',
         },
         destructive: {
           DEFAULT: 'hsl(var(--destructive))',
           foreground: 'hsl(var(--destructive-foreground))',
+        },
+        border: 'hsl(var(--border))',
+        input: 'hsl(var(--input))',
+        ring: 'hsl(var(--ring))',
+        chart: {
+          '1': 'hsl(var(--chart-1))',
+          '2': 'hsl(var(--chart-2))',
+          '3': 'hsl(var(--chart-3))',
+          '4': 'hsl(var(--chart-4))',
+          '5': 'hsl(var(--chart-5))',
         },
       },
       borderRadius: {
@@ -52,35 +78,35 @@ const config: Config = {
       },
       keyframes: {
         'accordion-down': {
-          from: { height: '0' },
-          to: { height: 'var(--radix-accordion-content-height)' },
+          from: {
+            height: '0',
+          },
+          to: {
+            height: 'var(--radix-accordion-content-height)',
+          },
         },
         'accordion-up': {
-          from: { height: 'var(--radix-accordion-content-height)' },
-          to: { height: '0' },
+          from: {
+            height: 'var(--radix-accordion-content-height)',
+          },
+          to: {
+            height: '0',
+          },
         },
-        'fade-up': {
+        'fade-in': {
           '0%': { opacity: '0', transform: 'translateY(20px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
-        'soft-scale': {
-          '0%': { transform: 'scale(1)' },
-          '100%': { transform: 'scale(1.03)' },
-        },
-        'button-lift': {
-          '0%': { transform: 'translateY(0)' },
-          '100%': { transform: 'translateY(-2px)' },
+        'slide-in': {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(0)' },
         },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        'fade-up': 'fade-up 0.6s ease-out forwards',
-        'soft-scale': 'soft-scale 0.3s ease-in-out forwards',
-        'button-lift': 'button-lift 0.2s ease-out forwards',
-      },
-      boxShadow: {
-        soft: '0 4px 12px rgba(0,0,0,0.04)',
+        'fade-in': 'fade-in 0.6s ease-out',
+        'slide-in': 'slide-in 0.5s ease-out',
       },
     },
   },

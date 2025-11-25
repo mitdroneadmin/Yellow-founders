@@ -8,39 +8,46 @@ export default function DiscoverGrid() {
     { name: 'PayFlow', pitch: 'Mobile payments for the unbanked', progress: 55, sector: 'FinTech', raised: '$110K', goal: '$200K' },
     { name: 'FarmMind', pitch: 'Smart irrigation systems for small farms', progress: 30, sector: 'AgriTech', raised: '$15K', goal: '$50K' },
     { name: 'VoiceFlow', pitch: 'Voice-based interfaces for local languages', progress: 70, sector: 'AI/ML', raised: '$35K', goal: '$50K' },
+    { name: 'KaziMatchAI', pitch: 'AI job matching for blue-collar workers', progress: 45, sector: 'HR Tech', raised: '$22K', goal: '$50K' },
+    { name: 'GreenCycle', pitch: 'Waste management platform for cities', progress: 65, sector: 'CleanTech', raised: '$32K', goal: '$50K' },
+    { name: 'HealthBot', pitch: 'WhatsApp health assistance for rural areas', progress: 80, sector: 'HealthTech', raised: '$40K', goal: '$50K' },
+    { name: 'LearnHub', pitch: 'Offline-first educational content delivery', progress: 35, sector: 'Education', raised: '$17K', goal: '$50K' },
   ];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
       {campaigns.map((campaign, index) => (
-        <div
-          key={index}
-          className="bg-card border border-card-border rounded-lg shadow-soft p-6 transition-transform duration-300 transform hover:scale-105"
+        <div 
+          key={index} 
+          className="bg-white border border-gray-200 rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 hover:scale-105 group"
         >
-          <div className="flex items-center mb-4">
-            <div className="w-12 h-12 bg-grey-light rounded-xl flex items-center justify-center mr-4">
-              <span className="text-secondary font-bold text-lg">{campaign.name[0]}</span>
+          <div className="flex items-center space-x-3 mb-4">
+            <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
+              <span className="text-black font-bold text-lg">{campaign.name[0]}</span>
             </div>
-            <div>
-              <h3 className="text-lg font-bold text-card-foreground">{campaign.name}</h3>
-              <span className="text-accent-foreground bg-accent px-2 py-1 rounded-full text-xs font-semibold">{campaign.sector}</span>
+            <div className="flex-1">
+              <h3 className="text-lg font-bold text-gray-900">{campaign.name}</h3>
+              <span className="text-sm text-primary font-medium">{campaign.sector}</span>
             </div>
           </div>
-          <p className="text-body-text text-sm mb-4 h-20">{campaign.pitch}</p>
+          
+          <p className="text-gray-600 mb-4 text-sm">{campaign.pitch}</p>
+          
           <div className="space-y-3 mb-4">
             <div className="flex justify-between text-sm">
-              <span className="text-small-label">{campaign.raised}</span>
-              <span className="text-secondary font-medium">{campaign.progress}%</span>
+              <span className="text-gray-500">{campaign.raised}</span>
+              <span className="text-gray-900 font-medium">{campaign.progress}%</span>
             </div>
-            <div className="w-full bg-grey-medium rounded-full h-2">
-              <div
-                className="bg-primary h-2 rounded-full"
+            <div className="w-full bg-gray-200 rounded-full h-2">
+              <div 
+                className="bg-primary h-2 rounded-full transition-all duration-500"
                 style={{ width: `${campaign.progress}%` }}
               ></div>
             </div>
-            <p className="text-xs text-small-label">Goal: {campaign.goal}</p>
+            <p className="text-xs text-gray-500">Goal: {campaign.goal}</p>
           </div>
-          <button className="w-full bg-primary hover:bg-primary-hover text-primary-foreground px-4 py-2 rounded-lg font-semibold transition-transform duration-300 transform hover:-translate-y-1">
+
+          <button className="w-full bg-primary hover:bg-primary-500 text-black px-4 py-2 rounded-xl font-semibold transition-colors">
             Invest
           </button>
         </div>
